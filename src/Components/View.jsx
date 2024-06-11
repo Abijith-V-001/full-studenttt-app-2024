@@ -1,7 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Navbar from './Navbar'
 
 const View = () => {
+    const[data,changeData]=useState([
+{
+        "name": "alok",
+        "rollNo": "23",
+        "admNo":"866",
+        "college": "fisat"
+
+ } ])
     return (
         <div>
             <Navbar />
@@ -20,12 +28,18 @@ const View = () => {
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                               {data.map(
+                                (value,index)=>{
+                                    return  <tr>
                                     
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
+                                    <td>{value.id}</td>
+                                    <td>{value.rollno}</td>
+                                    <td>{value.admno}</td>
+                                    <td>{value.college}</td>
+                                    
                                 </tr>
+                                }
+                               )}
                                
                             </tbody>
                         </table>
